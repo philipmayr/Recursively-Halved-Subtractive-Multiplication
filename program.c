@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-int find_greater_of_twain(int a, int b)
+int pick_greater_of_twain(int a, int b)
 {
-    return a > b ? a : b;
+    return (a > b) ? a : b;
 }
 
 int count_bits(int bit_string)
@@ -45,7 +45,7 @@ int multiply(int multiplicand, int multiplier)
     int multiplicand_bit_length = count_bits(multiplicand);
     int multiplier_bit_length = count_bits(multiplier);
     
-    int halved_bit_length = find_greater_of_twain(multiplicand_bit_length, multiplier_bit_length) >> 1;
+    int halved_bit_length = pick_greater_of_twain(multiplicand_bit_length, multiplier_bit_length) >> 1;
     int two_exponentiated_by_halved_bit_length = exponentiate(2, halved_bit_length);
 
     int multiplicand_low_order_bits = multiplicand % two_exponentiated_by_halved_bit_length;
